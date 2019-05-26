@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTE HOMEPAGE</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+<a href="index.html"><h1><img src="img/logo.png" align="left" alt="iste logo" ><div class="head">INDIAN SOCIETY FOR TECHNICAL EDUCATION</div></h1></a>
+<ul class="nav">
+<a href="#"><li class="first">HOME</li></a>
+  <a href="#"><li>About</li></a>
+  <a href="#"><li>Events</li></a>
+  <a href="#"><li>Gallery</li></a>
+  <a href="#"><li>Team</li></a>
+  <a href=""><li>Contact</li></a>
+</ul>
+<div class="gallery">
+<div class="imgslide">
+  <div class="number">1/3</div>
+  <img src="img/background.jpg" alt="first image" class="img">
+</div>
+<div class="imgslide">
+<div class="number">2/3</div>
+<img src="img/2.jpg" alt="second image" class="img">
+</div>
+<div class="imgslide">
+  <div class="number">3/3</div>
+  <img src="img/download.jpg" alt="third image" class="img">
+</div>
+<div class="dots" >
+  <span class="dot" onclick="cSlide(1)"></span>
+  <span class="dot" onclick="cSlide(2)"></span>
+  <span class="dot" onclick="cSlide(3)"></span>
+</div>
+</div>
+<h2>The image changes after every 2 second.</h2>
+<script>
+
+  var imgIndex=0;
+  showSlide();
+
+function showSlide() {
+  var i;
+  var slides = document.getElementsByClassName("imgslide");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  imgIndex++;
+  if (imgIndex > slides.length) {imgIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[imgIndex-1].style.display = "block";  
+  dots[imgIndex-1].className += " active";
+  setTimeout(showSlide, 2000); 
+}
+
+</script>
+ </body>
+</html>
